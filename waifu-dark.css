@@ -14,6 +14,12 @@
     left: auto !important;
 }
 
+/* 确保看板娘模型可见 */
+#waifu #live2d {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 /* 深色模式下的对话框样式 */
 html[data-theme="dark"] #waifu .waifu-tips {
     background: rgba(20, 20, 20, 0.98) !important;
