@@ -7,6 +7,7 @@
 
 - **演示地址**：[DEMO](https://letere-gzj.github.io/live2d-widget-v3/)
 - **文章教程**：[在你的网站中加入 live2d 自定义看板娘](https://blog.dogxi.me/diy-website-live2d)
+- **详细文档**：[完整使用指南](USAGE.md)
 
 快速使用：
 
@@ -228,6 +229,99 @@ https://fastly.jsdelivr.net/gh/dogxii/live2d-widget-v3@main/
 ```
 
 ![](./md/png/动作点击.gif)
+
+---
+
+#### 2.3.4 深色模式适配
+
+看板娘已内置深色模式支持，会自动根据系统主题切换样式。
+
+**添加主题检测脚本：**
+
+```javascript
+// 在页面加载时设置主题
+(function() {
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+    }
+    
+    function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    
+    setTheme(getSystemTheme());
+    
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        setTheme(e.matches ? 'dark' : 'light');
+    });
+})();
+```
+
+**引入深色模式样式：**
+
+```javascript
+Promise.all([
+    loadExternalResource(config.path.cssPath, 'css'),
+    loadExternalResource(config.path.darkCssPath, 'css'), // 添加这行
+    // ...
+]).then(() => {
+    // ...
+})
+```
+
+**配置说明：**
+- 看板娘会自动检测 `html` 标签的 `data-theme` 属性
+- `data-theme="dark"`：深色模式
+- `data-theme="light"`：浅色模式
+- 深色模式下，对话框为深色背景 + 白色文字
+- 浅色模式下，对话框为半透明白色背景 + 蓝色文字
+
+---
+
+#### 2.3.5 位置配置
+
+看板娘可以显示在左下角或右下角。
+
+**方法一：使用 CSS 类（推荐）**
+
+```css
+/* 左下角 */
+#waifu.waifu-left {
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* 右下角 */
+#waifu.waifu-right {
+    right: 10px !important;
+    left: auto !important;
+}
+```
+
+```javascript
+// 初始化后设置位置
+setTimeout(() => {
+    const waifu = document.getElementById('waifu')
+    if (waifu) {
+        waifu.classList.add('waifu-left')  // 或 'waifu-right'
+    }
+}, 100)
+```
+
+**方法二：修改 waifu.css**
+
+直接修改 `waifu.css` 中的 `#waifu` 样式：
+
+```css
+#waifu {
+    bottom: 0px;
+    left: 0;      /* 左下角 */
+    right: auto;  /* 左下角 */
+    /* 或者 */
+    right: 10px;  /* 右下角 */
+    left: auto;   /* 右下角 */
+}
+```
 
 ---
 
