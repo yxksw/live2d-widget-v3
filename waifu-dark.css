@@ -105,3 +105,37 @@ html[data-theme="dark"] #waifu {
 html[data-theme="dark"] #waifu * {
     transition: all 0.3s ease !important;
 }
+
+/* 浅色模式下的对话框样式（明确指定） */
+html[data-theme="light"] #waifu .waifu-tips {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(200, 200, 200, 0.8) !important;
+    color: #0099cc !important;
+    box-shadow: 0 3px 15px 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+html[data-theme="light"] #waifu .waifu-tips span {
+    color: #0099cc !important;
+}
+
+html[data-theme="light"] #waifu-tool {
+    color: #aaa !important;
+}
+
+html[data-theme="light"] #waifu-tool svg {
+    fill: #7b8c9d !important;
+}
+
+html[data-theme="light"] #waifu-tool svg:hover {
+    fill: #0684bd !important;
+}
+
+/* 确保主题切换时样式立即更新 */
+html[data-theme="dark"] #waifu .waifu-tips.waifu-tips-active,
+html[data-theme="dark"] #waifu .waifu-menu.waifu-menu-active,
+html[data-theme="dark"] #waifu .waifu-photo.waifu-photo-active,
+html[data-theme="dark"] #waifu .waifu-hitokoto.waifu-hitokoto-active,
+html[data-theme="dark"] #waifu .waifu-info.waifu-info-active {
+    background: rgba(20, 20, 20, 0.98) !important;
+    color: #ffffff !important;
+}
