@@ -3,6 +3,17 @@
    此文件用于覆盖 waifu.css 的样式以适配深色模式
    ======================================== */
 
+/* 看板娘位置 - 由 JS 控制添加 waifu-left 或 waifu-right 类 */
+#waifu.waifu-left {
+    left: 0 !important;
+    right: auto !important;
+}
+
+#waifu.waifu-right {
+    right: 10px !important;
+    left: auto !important;
+}
+
 /* 深色模式下的对话框样式 */
 html[data-theme="dark"] #waifu .waifu-tips {
     background: rgba(20, 20, 20, 0.98) !important;

@@ -29,14 +29,27 @@
 
 #waifu {
   bottom: 0px;
-  /* left: 0; */
+  /* 默认在右侧 */
   right: 10px;
+  left: auto;
   line-height: 0;
   margin-bottom: -10px;
   position: fixed;
   transform: translateY(3px);
   transition: transform 0.3s ease-in-out, bottom 3s ease-in-out;
   z-index: 100;
+}
+
+/* 左侧位置 */
+#waifu.waifu-left {
+  left: 0;
+  right: auto;
+}
+
+/* 右侧位置 */
+#waifu.waifu-right {
+  right: 10px;
+  left: auto;
 }
 
 #waifu:hover {
