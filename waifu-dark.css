@@ -1,0 +1,90 @@
+/* ========================================
+   Live2D Widget 深色模式适配
+   此文件用于覆盖 waifu.css 的样式以适配深色模式
+   ======================================== */
+
+/* 深色模式下的对话框样式 */
+html[data-theme="dark"] #waifu .waifu-tips {
+    background: rgba(20, 20, 20, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 深色模式下对话框内所有文字强制为白色 */
+html[data-theme="dark"] #waifu .waifu-tips,
+html[data-theme="dark"] #waifu .waifu-tips *,
+html[data-theme="dark"] #waifu .waifu-tips a,
+html[data-theme="dark"] #waifu .waifu-tips span,
+html[data-theme="dark"] #waifu .waifu-tips div,
+html[data-theme="dark"] #waifu .waifu-tips p,
+html[data-theme="dark"] #waifu .waifu-tips font {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    background: transparent !important;
+}
+
+/* 深色模式下的工具栏样式 */
+html[data-theme="dark"] #waifu .waifu-tool {
+    color: #cccccc !important;
+}
+
+html[data-theme="dark"] #waifu .waifu-tool:hover {
+    color: #07C160 !important;
+}
+
+/* 深色模式下的工具栏按钮背景 */
+html[data-theme="dark"] #waifu .waifu-tool span {
+    color: #cccccc !important;
+}
+
+html[data-theme="dark"] #waifu .waifu-tool span:hover {
+    color: #07C160 !important;
+}
+
+/* 深色模式下的菜单样式 */
+html[data-theme="dark"] #waifu .waifu-menu {
+    background: rgba(20, 20, 20, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+html[data-theme="dark"] #waifu .waifu-menu-item {
+    color: #ffffff !important;
+}
+
+html[data-theme="dark"] #waifu .waifu-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 深色模式下的拍照样式 */
+html[data-theme="dark"] #waifu .waifu-photo {
+    background: rgba(20, 20, 20, 0.98) !important;
+}
+
+html[data-theme="dark"] #waifu .waifu-photo canvas {
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 深色模式下的一言样式 */
+html[data-theme="dark"] #waifu .waifu-hitokoto {
+    background: rgba(20, 20, 20, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* 深色模式下的信息面板样式 */
+html[data-theme="dark"] #waifu .waifu-info {
+    background: rgba(20, 20, 20, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+}
+
+/* 确保所有可能的元素都适配深色模式 */
+html[data-theme="dark"] #waifu {
+    filter: none !important;
+}
+
+html[data-theme="dark"] #waifu * {
+    transition: all 0.3s ease !important;
+}
